@@ -1,0 +1,145 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: rgb(4, 78, 54) 0px 2px 5px 0;
+}
+
+.search-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search {
+    display: block;
+    width: 50%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: 1px solid hsl(210, 14%, 83%);
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.search:focus {
+    outline: 1px solid hsl(160, 20%, 58%);
+    box-shadow: rgb(65, 107, 93) 0px 1px 3px 0;
+}
+
+
+.search-btn {
+    padding: 10px 15px;
+    border: 1px solid hsl(160, 20%, 58%);
+    border-radius: 14px;
+    background-color: hsl(160, 20%, 58%);
+    box-shadow: rgb(65, 107, 93) 0px 1px 3px 0;
+    color: hsl(0, 0%, 100%);
+    line-height: 1.5;
+    font-size: 16px;
+    transition: all 150ms ease-in-out;
+}
+
+.search-btn:hover {
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+img {
+    width: 33px;
+    filter: brightness(0) invert(1);
+}
+
+.main-weather {
+    margin-left: 18px;
+}
+
+.city {
+    margin: 0;
+    margin-top: 20px;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.flex-container {
+    display: flex;
+    gap: 39px;
+}
+
+.main-day-info {
+    margin: 0;
+}
+
+.main-imj-txt {
+    margin:0;
+}
+
+.main-temperature-wrap {
+    display: flex;
+    gap: 10px;
+    margin-top: 0;
+    align-items: center;
+}
+
+.main-temperature {
+    font-size: 48px;
+    margin-top: 13px;
+
+}
+
+.temp-C-F {
+    text-decoration: none;
+    color: black;
+    font-size: 48px;
+    margin-top: 13px;
+    display: flex;
+}
+
+.temp-C-F:hover {
+    cursor: pointer;
+    color: hsl(160, 20%, 58%);;
+}
+
+.line {
+    font-size: 48px;
+    margin-top: 13px;
+}
+
+.main-imj {
+    font-size: 65px;
+}
+
+.wind-info {
+    margin: 0;
+    font-style: italic;
+}
+
+.temp-feel {
+    margin: 0;
+    font-style: italic;
+}
+
+.day-forecast-wrap {
+    display: flex;
+    margin-top: 15px;
+    padding: 5px;
+    border: 1px solid hsl(160, 20%, 58%);
+    border-radius: 0.375rem;
+}
+
+.day-info {
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.day-temperature {
+    justify-content: flex-end;
+}
+
+
+
