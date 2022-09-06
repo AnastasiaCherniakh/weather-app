@@ -141,5 +141,20 @@ img {
     justify-content: flex-end;
 }
 
+.code-text {
+    text-align: center;
+}
+
+.code-link {
+    text-decoration: none;
+    color: hsl(160, 20%, 58%);
+}
+
+.code-link:hover {
+    cursor: pointer;
+    color: hsl(160, 20%, 58%);;
+    text-decoration: underline;
+}
+
 
 
