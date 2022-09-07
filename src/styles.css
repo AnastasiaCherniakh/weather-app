@@ -94,7 +94,7 @@ body {
 
 .main-temperature-wrap {
     display: flex;
-    gap: 10px;
+    gap: 3px;
     margin-top: 0;
     align-items: center;
 }
