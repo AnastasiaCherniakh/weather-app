@@ -31,12 +31,12 @@ function getWeather(response) {
   let feelLike = Math.round(response.data.main.feels_like);
   let windSpeed = Math.round(response.data.wind.speed);
   let mainTemp = document.querySelector("#main-temperature");
-  mainTemp.innerHTML = temperature;
   let city = document.querySelector(".city");
-  city.innerHTML = response.data.name;
   let tempFeel = document.querySelector("#temp-feel");
-  tempFeel.innerHTML = feelLike;
   let wind = document.querySelector("#wind");
+  mainTemp.innerHTML = temperature;
+  city.innerHTML = response.data.name;
+  tempFeel.innerHTML = feelLike;
   wind.innerHTML = windSpeed;
 }
 
