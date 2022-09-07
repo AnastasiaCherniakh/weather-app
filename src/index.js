@@ -27,22 +27,25 @@ function displayDate(date) {
 }
 
 function getWeather(response) {
-  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let feelLike = Math.round(response.data.main.feels_like);
   let windSpeed = Math.round(response.data.wind.speed);
   let city = response.data.name;
   let description = response.data.weather[0].description;
+  let icon = response.data.weather[0].icon;
   let mainTempEl = document.querySelector("#main-temperature");
   let cityEl = document.querySelector(".city");
   let tempFeelEl = document.querySelector("#temp-feel");
   let windEl = document.querySelector("#wind");
   let descriptionEl = document.querySelector("#description");
+  let iconEl = document.querySelector("#main-imj");
   mainTempEl.innerHTML = temperature;
   cityEl.innerHTML = city;
   tempFeelEl.innerHTML = feelLike;
   windEl.innerHTML = windSpeed;
   descriptionEl.innerHTML = description;
+  iconEl.setAttribute("src", `http://openweathermap.org/img/wn/${icon}@2x.png`);
+  iconEl.setAttribute("alt", description);
 }
 
 function getCity(event) {

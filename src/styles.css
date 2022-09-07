@@ -50,7 +50,7 @@ body {
     opacity: 0.85;
 }
 
-img {
+.img-btn {
     width: 33px;
     filter: brightness(0) invert(1);
 }
@@ -90,6 +90,8 @@ img {
     margin:0;
 }
 
+
+
 .main-temperature-wrap {
     display: flex;
     gap: 10px;
@@ -104,25 +106,29 @@ img {
 }
 
 .temp-C-F {
+    position: relative;
     text-decoration: none;
     color: black;
-    font-size: 48px;
+    font-size: 35px;
     margin-top: 13px;
     display: flex;
+    top: -10px;
 }
 
 .temp-C-F:hover {
     cursor: pointer;
-    color: hsl(160, 20%, 58%);;
+    color: hsl(160, 20%, 58%);
 }
 
 .line {
-    font-size: 48px;
+    position: relative;
+    font-size: 35px;
     margin-top: 13px;
+    top: -10px;
 }
 
-.main-imj {
-    font-size: 65px;
+.additional-info {
+    margin: 10px;
 }
 
 .wind-info {
