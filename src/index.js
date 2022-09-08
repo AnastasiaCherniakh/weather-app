@@ -33,6 +33,7 @@ function getWeather(response) {
   let city = response.data.name;
   let description = response.data.weather[0].description;
   let icon = response.data.weather[0].icon;
+  celsiusTemp = response.data.main.temp;
   let mainTempEl = document.querySelector("#main-temperature");
   let cityEl = document.querySelector(".city");
   let tempFeelEl = document.querySelector("#temp-feel");
@@ -74,6 +75,25 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(handleLocation);
 }
 
+function getFahrenheit(event) {
+  event.preventDefault();
+  let temperatureEl = document.querySelector("#main-temperature");
+  fahrenheit.classList.add("active");
+  celsius.classList.remove("active");
+  let fahrenheitTemp = (celsiusTemp *9/5) + 32;
+  temperatureEl.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function getCelsius(event) {
+  event.preventDefault();
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  let temperatureEl = document.querySelector("#main-temperature");
+  temperatureEl.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
+
 let currentTime = new Date();
 let timeInfo = document.querySelector("#main-day-time");
 timeInfo.innerHTML = displayDate(currentTime);
@@ -83,6 +103,12 @@ searchForm.addEventListener("submit", getCity);
 
 let btnLocation = document.querySelector("#location");
 btnLocation.addEventListener("click", getLocation);
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", getFahrenheit);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", getCelsius);
 
 searchCity("Vienna");
 

@@ -120,6 +120,11 @@ body {
     color: hsl(160, 20%, 58%);
 }
 
+.active {
+    cursor: default;
+    color: hsl(160, 20%, 58%);
+}
+
 .line {
     position: relative;
     font-size: 35px;
