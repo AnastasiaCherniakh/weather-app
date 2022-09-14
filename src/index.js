@@ -26,6 +26,19 @@ function displayDate(date) {
   return `${currentDate} ${months[monthIndex]} ${currentHour}:${currentMinute}`;
 }
 
+function getForecast() {
+  forecastEl = document.querySelector("#forecast");
+  let days = ["fri",'thu',"sun"];
+  forecastHtml = '';
+  days.forEach(function (day) {
+    forecastHtml += `<div class="day-forecast-wrap">
+    <p class="day-info" id="forecast-day">${day}</p>
+    <p class="day-temperature" id="forecast-temp">27°C ☀️</p>
+    </div>`
+  });
+  forecastEl.innerHTML = forecastHtml;
+}
+
 function getWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   let feelLike = Math.round(response.data.main.feels_like);
@@ -94,6 +107,7 @@ function getCelsius(event) {
 
 let celsiusTemp = null;
 
+
 let currentTime = new Date();
 let timeInfo = document.querySelector("#main-day-time");
 timeInfo.innerHTML = displayDate(currentTime);
@@ -111,6 +125,7 @@ let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", getCelsius);
 
 searchCity("Vienna");
+getForecast();
 
 
 
