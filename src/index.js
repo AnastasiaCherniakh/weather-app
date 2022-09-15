@@ -60,7 +60,6 @@ function getForecastDate(timestamp) {
 
 
 function showForecast(response) {
-  console.log(response.data.daily);
   let forecast = response.data.daily;
   forecastEl = document.querySelector("#forecast");
   forecastHtml = '';
