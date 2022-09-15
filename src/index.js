@@ -26,14 +26,15 @@ function displayDate(date) {
   return `${currentDate} ${months[monthIndex]} ${currentHour}:${currentMinute}`;
 }
 
-function showForecast() {
+function showForecast(response) {
+  console.log(response.data);
   forecastEl = document.querySelector("#forecast");
   let days = ["fri",'thu',"sun"];
   forecastHtml = '';
   days.forEach(function (day) {
     forecastHtml += `<div class="day-forecast-wrap">
     <p class="day-info" id="forecast-day">${day}</p>
-    <p class="day-temperature" id="forecast-temp">27°C ☀️</p>
+    <p class="day-temperature" id="forecast-temp">27°/ <span class="min-temp">18°</span><img src="http://openweathermap.org/img/wn/03d@2x.png" class="forecast-icon" alt="weather icon"/></p>
     </div>`
   });
   forecastEl.innerHTML = forecastHtml;
@@ -42,7 +43,7 @@ function showForecast() {
 function getForecast(coordinates) {
   apiKey = "c8a77112b2faf6684bb4b21a0aa778ae";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
 }
 
 function getWeather(response) {
@@ -132,7 +133,6 @@ let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", getCelsius);
 
 searchCity("Vienna");
-showForecast();
 
 
 
