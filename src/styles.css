@@ -5,7 +5,7 @@ body {
 .card {
     margin: 20px auto;
     width: 80%;
-    box-shadow: rgb(4, 78, 54) 0px 2px 5px 0;
+    box-shadow: hsl(161, 90%, 16%) 0 3px 5px 0px;
 }
 
 .search-wrap {
@@ -90,8 +90,6 @@ body {
     margin:0;
 }
 
-
-
 .main-temperature-wrap {
     display: flex;
     gap: 3px;
@@ -105,30 +103,12 @@ body {
 
 }
 
-.temp-C-F {
-    position: relative;
+.temp-C {
     text-decoration: none;
     color: black;
     font-size: 35px;
     margin-top: 13px;
     display: flex;
-    top: -10px;
-}
-
-.temp-C-F:hover {
-    cursor: pointer;
-    color: hsl(160, 20%, 58%);
-}
-
-.active {
-    cursor: default;
-    color: hsl(160, 20%, 58%);
-}
-
-.line {
-    position: relative;
-    font-size: 35px;
-    margin-top: 13px;
     top: -10px;
 }
 

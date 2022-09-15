@@ -68,7 +68,7 @@ function showForecast(response) {
     if(index < 5) {
       forecastHtml += `<div class="day-forecast-wrap">
       <p class="day-info" id="forecast-day">${getForecastDate(forecastObj.dt)}</p>
-      <p class="day-temperature" id="forecast-temp">${Math.round(forecastObj.temp.max)}°/ <span class="min-temp">${Math.round(forecastObj.temp.min)}°</span><img src="http://openweathermap.org/img/wn/${forecastObj.weather[0].icon}@2x.png" class="forecast-icon" alt="weather icon"/></p>
+      <p class="day-temperature" id="forecast-temp">${Math.round(forecastObj.temp.max)}°/ <span class="min-temp" id="min-temp">${Math.round(forecastObj.temp.min)}°</span><img src="http://openweathermap.org/img/wn/${forecastObj.weather[0].icon}@2x.png" class="forecast-icon" alt="weather icon"/></p>
       </div>`
     }
   });
@@ -131,23 +131,6 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(handleLocation);
 }
 
-function getFahrenheit(event) {
-  event.preventDefault();
-  let temperatureEl = document.querySelector("#main-temperature");
-  fahrenheit.classList.add("active");
-  celsius.classList.remove("active");
-  let fahrenheitTemp = (celsiusTemp *9/5) + 32;
-  temperatureEl.innerHTML = Math.round(fahrenheitTemp);
-}
-
-function getCelsius(event) {
-  event.preventDefault();
-  celsius.classList.add("active");
-  fahrenheit.classList.remove("active");
-  let temperatureEl = document.querySelector("#main-temperature");
-  temperatureEl.innerHTML = Math.round(celsiusTemp);
-}
-
 let celsiusTemp = null;
 
 
@@ -160,12 +143,6 @@ searchForm.addEventListener("submit", getCity);
 
 let btnLocation = document.querySelector("#location");
 btnLocation.addEventListener("click", getLocation);
-
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", getFahrenheit);
-
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", getCelsius);
 
 searchCity("Vienna");
 
