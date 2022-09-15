@@ -26,16 +26,51 @@ function displayDate(date) {
   return `${currentDate} ${months[monthIndex]} ${currentHour}:${currentMinute}`;
 }
 
+function getForecastDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let numDay = date.getDate();
+  let monthIndex = date.getMonth();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
+  return `${numDay} ${months[monthIndex]}, ${days[day]}`;
+}
+
+
 function showForecast(response) {
-  console.log(response.data);
+  console.log(response.data.daily);
+  let forecast = response.data.daily;
   forecastEl = document.querySelector("#forecast");
-  let days = ["fri",'thu',"sun"];
   forecastHtml = '';
-  days.forEach(function (day) {
-    forecastHtml += `<div class="day-forecast-wrap">
-    <p class="day-info" id="forecast-day">${day}</p>
-    <p class="day-temperature" id="forecast-temp">27°/ <span class="min-temp">18°</span><img src="http://openweathermap.org/img/wn/03d@2x.png" class="forecast-icon" alt="weather icon"/></p>
-    </div>`
+  forecast.forEach(function (forecastObj, index) {
+    if(index < 5) {
+      forecastHtml += `<div class="day-forecast-wrap">
+      <p class="day-info" id="forecast-day">${getForecastDate(forecastObj.dt)}</p>
+      <p class="day-temperature" id="forecast-temp">${Math.round(forecastObj.temp.max)}°/ <span class="min-temp">${Math.round(forecastObj.temp.min)}°</span><img src="http://openweathermap.org/img/wn/${forecastObj.weather[0].icon}@2x.png" class="forecast-icon" alt="weather icon"/></p>
+      </div>`
+    }
   });
   forecastEl.innerHTML = forecastHtml;
 }

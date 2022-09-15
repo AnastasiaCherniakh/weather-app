@@ -157,7 +157,8 @@ body {
 .day-info {
     flex: 1;
     justify-content: flex-start;
-    font-size: 18px;
+    font-size: 17px;
+    margin-top: 6px;
 }
 
 .day-temperature {
@@ -186,8 +187,8 @@ body {
 }
 
 .forecast-icon {
-    width: 60px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
 }
 
 
