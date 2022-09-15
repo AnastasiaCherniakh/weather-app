@@ -106,8 +106,8 @@ body {
 .temp-C {
     text-decoration: none;
     color: black;
-    font-size: 35px;
-    margin-top: 13px;
+    font-size: 25px;
+    margin-top: 9px;
     display: flex;
     top: -10px;
 }

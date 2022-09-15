@@ -130,9 +130,6 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(handleLocation);
 }
 
-let celsiusTemp = null;
-
-
 let currentTime = new Date();
 let timeInfo = document.querySelector("#main-day-time");
 timeInfo.innerHTML = displayDate(currentTime);
